@@ -9,6 +9,69 @@ sudo vi /lib/systemd/system/jenkins.service
 It should look like this:
 Environment="JENKINS_PORT=8090"
 Once done start Jenkins service.
-sudo systemctl start jenkins
+sudo systemctl restart jenkins
+
+
+INSTALLATION OF JAVA
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+openjdk version "17.0.8" 2023-07-18
+OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
+OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
+
+
+
+
+Long Term Support release
+A LTS (Long-Term Support) release is chosen every 12 weeks from the stream of regular releases as the stable release for that time period. It can be installed from the debian-stable apt repository.
+
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+Weekly release
+A new release is produced weekly to deliver bug fixes and features to users and plugin developers. It can be installed from the debian apt repository.
+
+Beginning with Jenkins 2.335 and Jenkins 2.332.1, the package is configured with systemd rather than the older System V init. See the DigitalOcean community systemd tutorial to better understand the benefits of systemd and the systemctl command.
+
+The package installation will:
+
+Setup Jenkins as a daemon launched on start. Run systemctl cat jenkins for more details.
+
+Create a ‘jenkins’ user to run this service.
+
+Direct console log output to systemd-journald. Run journalctl -u jenkins.service if you are troubleshooting Jenkins.
+
+Populate /lib/systemd/system/jenkins.service with configuration parameters for the launch, e.g JENKINS_HOME
+
+Set Jenkins to listen on port 8080. Access this port with your browser to start configuration.
+
+If Jenkins fails to start because a port is in use, run systemctl edit jenkins and add the following:
+
+[Service]
+Environment="JENKINS_PORT=8081"
+Here, "8081" was chosen but you can put another port available.
+
+Installation of Java
+Jenkins requires Java to run, yet not all Linux distributions include Java by default. Additionally, not all Java versions are compatible with Jenkins.
+
+There are multiple Java implementations which you can use. OpenJDK is the most popular one at the moment, we will use it in this guide.
+
+Update the Debian apt repositories, install OpenJDK 17, and check the installation with the commands:
+
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+openjdk version "17.0.8" 2023-07-18
+OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
+OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
+
+INTERACTING JENKINS THROUGH CLI:
+ 1.firstly install jenkins-cli.jar  by runnning -- wget http://20.64.224.10:8080/jnlpJars/jenkins-cli.jar
+ 2. authentication of jenkins using ---java -jar jenkins-cli.jar -s http://20.64.224.10:8080/  -auth username:apitoken (username>mange>api token)
 
 
