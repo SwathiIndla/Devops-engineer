@@ -71,7 +71,52 @@ OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
 OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
 
 INTERACTING JENKINS THROUGH CLI:
- 1.firstly install jenkins-cli.jar  by runnning -- wget http://20.64.224.10:8080/jnlpJars/jenkins-cli.jar
- 2. authentication of jenkins using ---java -jar jenkins-cli.jar -s http://20.64.224.10:8080/  -auth username:apitoken (username>mange>api token)
+ 1.firstly install jenkins-cli.jar  by runnning -- wget http://ipaddress:8080/jnlpJars/jenkins-cli.jar
+ 2. authentication of jenkins using ---java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token)
+3. list of all jobs in jenkins -- java -jar jenkins-cli.jar -s http://ipadress:8080/  -auth username:apitoken (username>mange>api token) -webSocket list-jobs
+4.build the job -- java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) -webSocket build <job name> (ex:test1)
+5.get the job details - java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) get-job <job name> 
+                                     or
+                        java -jar jenkins-cli.jar get-job <job name> (when "export JENKINS_URL=http://jenkins-server/";
+"java -jar jenkins-cli.jar command arguments"
+6.to create a new job -- java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) create-job <jobname> < config.xml
+    config.xml (is a xml file ) want to create 
+    a sample config.xml content given below
+"<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders/>
+  <publishers/>
+  <buildWrappers/>
+</project>"
+ 7. to delete the job -- java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) delete-job <job name>
+ 8. to retrive information about specific build number -- java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) 
+                                                            get-build job-name buildnumber
+9.Stops a currently running build. - java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) stop-build job_name build_number
+10.Deletes a user from Jenkins.-java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) delete-user username
+11.list-slaves:
 
+Lists all configured slaves/agents in Jenkins.--- java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) list-slaves
+12.online-node / offline-node:
+Sets a node online or offline.
+java -jar jenkins-cli.jar -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) online-node node_name
+java -jar jenkins-cli.jar  -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) offline-node node_name
+13.connect-node:
+Connects a node to Jenkins. --- java -jar jenkins-cli.jar  -s http://ipaddress:8080/  -auth username:apitoken (username>mange>api token) connect-node node_name
+
+
+CONNECTING OVER ssh :
+ssh -i /home/mike/.ssh/jenkins_key -l mike -p 8022 jenkins-server help
+-i flag is used to point to mike's private SSH key. Remember, we have already added the public key in the Jenkins configuration.
+-l is the login user which in our example is mike
+-p is the port which we found out in the previous step to be 8022
 
