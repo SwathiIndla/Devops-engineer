@@ -120,3 +120,7 @@ ssh -i /home/mike/.ssh/jenkins_key -l mike -p 8022 jenkins-server help
 -l is the login user which in our example is mike
 -p is the port which we found out in the previous step to be 8022
 
+
+
+
+
