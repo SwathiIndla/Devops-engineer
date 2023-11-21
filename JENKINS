@@ -122,5 +122,17 @@ ssh -i /home/mike/.ssh/jenkins_key -l mike -p 8022 jenkins-server help
 
 
 
+BACKUP JENKINS
+ we can backup in two ways:
+  1.using plugins
+  2.shell script
+1.  USING PLUGIN: 
+    a.jenkins>mange jenkins>plugins>available pligins>search backup> download thinbackup
+     b.going into thinbackup which is present in manage jenkins>setting>backup directory(create one directory in linux and give read and write permission)>save
+     c.go back > backup now
+
+     
+
+
 
 
