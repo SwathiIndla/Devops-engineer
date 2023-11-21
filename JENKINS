@@ -131,6 +131,8 @@ BACKUP JENKINS
      b.going into thinbackup which is present in manage jenkins>setting>backup directory(create one directory in linux and give read and write permission)>save
      c.go back > backup now
 
+RESTORE JENKINS
+
      
 
 
