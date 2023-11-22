@@ -622,3 +622,50 @@ sudo usermod -e YYYY-MM-DD username
 This sets the expiration date for the user account.
 
 Remember to use sudo or run the usermod command with root privileges (sudo) as modifying user accounts typically requires administrative rights. Always exercise caution when making changes to user accounts as incorrect usage of usermod can impact user access or system functionality.
+
+VI EDITOR
+Command Mode Shortcuts:
+Navigation:
+
+h: Move left.
+j: Move down.
+k: Move up.
+l: Move right.
+0 (zero): Move to the beginning of the line.
+$: Move to the end of the line.
+gg: Move to the start of the file.
+G: Move to the end of the file.
+w: Move forward to the start of the next word.
+b: Move backward to the start of the previous word.
+Editing:
+
+i: Switch to insert mode before the cursor.
+I: Insert at the beginning of the line.
+a: Append after the cursor.
+A: Append at the end of the line.
+o: Open a new line below the current line.
+O: Open a new line above the current line.
+x: Delete character under the cursor.
+dd: Delete the entire line.
+yy: Copy the entire line.
+p: Paste after the cursor.
+Undo/Redo:
+
+u: Undo the last change.
+Ctrl + r: Redo the last undone change.
+Searching:
+
+/search_term: Search for search_term forward in the document.
+n: Find the next occurrence of the search term.
+N: Find the previous occurrence of the search term.
+Saving and Exiting:
+
+:w: Save changes (write).
+:q: Quit Vi editor.
+:q!: Quit without saving changes.
+:wq or ZZ: Save changes and quit.
+Insert Mode:
+In Insert mode, typing inserts text as expected in most text editors.
+Miscellaneous:
+To switch from command mode to insert mode, press i.
+To switch from insert mode to command mode, press Esc.
