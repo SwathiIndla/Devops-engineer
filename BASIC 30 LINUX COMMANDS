@@ -172,7 +172,8 @@ echo "new_password" | passwd --stdin username	 -within single line
 -s = shell 
 -e	=expiry date 
 -p= password 
--f	= custom configuration file  30.userdel – to delete user account userdel username 
+-f	= custom configuration file 
+30.userdel – to delete user account userdel username 
  1))
 cd ~ - This command changes the current directory to your home directory. The tilde (~) is a shorthand notation for the home directory of the current user.
 cd /path/to/directory
