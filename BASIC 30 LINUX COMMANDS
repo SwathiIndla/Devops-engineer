@@ -568,4 +568,57 @@ tar -cvf file.tar path
 27.dmesg ---> used to display the kernel ring buffer messages. These messages provide information about the kernel's operation, hardware detection, and various system events.These messages can be useful for diagnosing hardware issues, understanding system boot processes, and troubleshooting various system problems.
   
  
- 
+ The usermod command in Linux is used to modify user account properties. It allows administrators to make changes to an existing user account, such as modifying the user's username, primary group, home directory, shell, and more.
+
+Here are some common usages of the usermod command:
+
+Syntax:
+
+usermod [options] USERNAME
+Common Options:
+Change Username (-l/--login NEW_LOGIN):
+
+
+sudo usermod -l new_username old_username
+This changes the username from old_username to new_username.
+
+Change User ID (-u/--uid UID):
+
+
+sudo usermod -u new_uid username
+This changes the UID (user ID) of the user to the specified new_uid.
+
+Add User to a Supplementary Group (-aG/--append GROUP):
+
+
+sudo usermod -aG groupname username
+This adds the user to a supplementary group (additional group).
+
+Change User's Home Directory (-d/--home NEW_HOME):
+
+
+sudo usermod -d /path/to/new_home -m username
+This changes the user's home directory and moves the content from the old directory to the new one (-m flag).
+
+Change User's Login Shell (-s/--shell SHELL):
+
+
+sudo usermod -s /path/to/new_shell username
+This changes the user's default login shell.
+
+Lock/Unlock User Account (-L/-U):
+
+
+sudo usermod -L username
+This locks the user account (disables login).
+
+
+sudo usermod -U username
+This unlocks the previously locked user account.
+
+Expire User Account (-e/--expiredate EXPIRE_DATE):
+
+sudo usermod -e YYYY-MM-DD username
+This sets the expiration date for the user account.
+
+Remember to use sudo or run the usermod command with root privileges (sudo) as modifying user accounts typically requires administrative rights. Always exercise caution when making changes to user accounts as incorrect usage of usermod can impact user access or system functionality.
