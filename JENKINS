@@ -133,7 +133,19 @@ BACKUP JENKINS
 
 RESTORE JENKINS
 
-     
+
+BASIC JENKINFILES SAMPLE:
+ pipeline{
+   agent any
+    stages{
+      stage {
+          steps ('dev') {
+                   echo "dev"
+            }
+      }
+ }
+
+
 
 
 
