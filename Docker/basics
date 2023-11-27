@@ -17,4 +17,32 @@ Docker container is a runtime instance of an image. Allows developers to package
 are runtime instances of Docker images
 
 INSTALLATING A DOCKER ON UBUNTU -
-        
+  sudo apt-get update
+  sudo apt install docker.io
+ 1. Remove old version of Docker -- $ sudo apt-get remove docker docker-engine docker.io containerd runc
+
+DOCKER COMMANDS
+ 1.docker run <image-name> -- to run a container from an image 
+ 2.docker run --name <container_name> <image-name> -- to give name of cotainer
+3.docker pull <image-name> -- to pull any image which is present in offical docker hub
+ 4.docker ps -- list all running container 
+ 5.docker ps -a  -- listing all stopped and running containers
+ 6.docker ps -l -- list the latest container
+ 7.docker ps -q -- shows the id of the container
+ 8.docker stop <container-id/container-name> -- to stop a container
+ 9.docker start <container-id/container-name> -- to start a container
+ 10.docker rm {options} <container-id/container-name> - to remove the container
+      -f flag: remove the container forcefully.
+      -v flag: remove the volumes.
+      -l flag: remove the specific link mentioned.
+11.docker rmi <image ID/ image name> -- to delete image in docker
+12.docker images -- list of images
+13.docker exec {options} --This command allows us to run new commands in a running container.
+  -d flag: for running the commands in the background.
+  -i flag: it will keep STDIN open even when not attached.
+  -e flag: sets the environment variables 
+  ex: docker exec <cont-id> cat /etc/*release*
+14.docker login -- login to docker hub
+15.docker push <imagename/image-id> -- to push inti hub
+15.docker build -t image-name:tag . -- to build docker image
+
