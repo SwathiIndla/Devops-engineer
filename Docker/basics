@@ -46,4 +46,7 @@ DOCKER COMMANDS
 15.docker push <imagename/image-id> -- to push inti hub
 15.docker build -t image-name:tag . -- to build docker image
 16 .docker images -q | wc -l -- no.of images in local in number
+17. docker rmi $(docker images -aq) -- to delete all the images at a time 
+18.docker images <image-name> - to see details of particular image
+19.docker image <image-image.> --no-trunc -- To display Docker Images, with full-length Image Ids, you use the –no-trunc flag.
 
