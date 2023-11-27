@@ -49,4 +49,8 @@ DOCKER COMMANDS
 17. docker rmi $(docker images -aq) -- to delete all the images at a time 
 18.docker images <image-name> - to see details of particular image
 19.docker image <image-image.> --no-trunc -- To display Docker Images, with full-length Image Ids, you use the –no-trunc flag.
-
+20.docker run <image-name> sleep 10 -to sleep the container in 10 sec
+  after 10 sec the container automatically will stop
+  to attach the same sutiation 
+  docker attach <cont-id> --before attaching ensure the container is ruunning
+21.
