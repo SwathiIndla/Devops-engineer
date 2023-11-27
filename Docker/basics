@@ -45,4 +45,5 @@ DOCKER COMMANDS
 14.docker login -- login to docker hub
 15.docker push <imagename/image-id> -- to push inti hub
 15.docker build -t image-name:tag . -- to build docker image
+16 .docker images -q | wc -l -- no.of images in local in number
 
