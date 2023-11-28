@@ -54,3 +54,9 @@ DOCKER COMMANDS
   to attach the same sutiation 
   docker attach <cont-id> --before attaching ensure the container is ruunning
 21.sudo docker --filter=reference='ubuntu' -- to filter the images
+22.docker run -it <container-name> -- to enter into that container
+23.os.environ.get(" ") - to modify it in future 
+  ex : colour = os.environ.get("APP-COLOR") in code 
+   in exceution  export APP-COLOR ="blue"
+   docker run -e export APP-COLOR ="blue" <image-name>
+24.
