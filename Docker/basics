@@ -53,4 +53,4 @@ DOCKER COMMANDS
   after 10 sec the container automatically will stop
   to attach the same sutiation 
   docker attach <cont-id> --before attaching ensure the container is ruunning
-21.
+21.sudo docker --filter=reference='ubuntu' -- to filter the images
