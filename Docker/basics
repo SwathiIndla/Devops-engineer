@@ -59,4 +59,7 @@ DOCKER COMMANDS
   ex : colour = os.environ.get("APP-COLOR") in code 
    in exceution  export APP-COLOR ="blue"
    docker run -e export APP-COLOR ="blue" <image-name>
-24.
+What is Docker Compose????
+Docker Compose will execute a YAML-based multi-container application. The YAML file consists of all configurations needed to deploy containers Docker Compose, which 
+is integrated with Docker Swarm, and provides directions for building and deploying containers. With Docker Compose, each container is constructed to run on a 
+single host.
