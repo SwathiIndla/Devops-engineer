@@ -63,3 +63,5 @@ What is Docker Compose????
 Docker Compose will execute a YAML-based multi-container application. The YAML file consists of all configurations needed to deploy containers Docker Compose, which 
 is integrated with Docker Swarm, and provides directions for building and deploying containers. With Docker Compose, each container is constructed to run on a 
 single host.
+24.docker run --link <container-name yo link to current container>:<hostname which is specificed in a current application> <image-name> -- linking between two containers
+ 25.
