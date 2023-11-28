@@ -1,0 +1,46 @@
+version-1 
+
+
+redis(container-namr):
+     image:redis(image-name to pull fron docker hub)
+vote(container-name):
+    build: ./vote(specify the locationof directory which contain application code and dockerfile) - to build the docker image by own
+    ports:
+      -8080:5000
+     links:
+       -redis
+
+
+
+VERSION-2
+version:2
+services:
+  redis:
+    image:redis
+  vote:
+     image:vote
+     ports:
+      -8080:500
+     depends_on:
+        -redis 
+
+
+  VERSION-3
+
+  version:3
+  services:
+    redis:
+        image:redis
+    vote:
+     image:vote
+     ports:
+      -8080:500
+     networks:
+        -frontend
+        -backend
+
+  networks:
+   -frontend
+   -backend
+
+       
