@@ -27,7 +27,7 @@
 •	df –h  
 •	df –h <path to directory> 
 3.	mount –used to attach(mount) filesystems or storage devices to specific directory in the file system 
-mount  <filesystem>  <desired directory/mount point> ex: mount /dev/vdb   /mnt/data 
+mount  <filesystem>  <desired directory/mount point> ex: mount /dev/vdb   /mnt/data  
 4.	unmount – used to deattached mounted device on specified directory. unmount <mountpoint> 
     5.ping –used to test the connectivity between the servers. 
              Ex : ping <server name> # ping google.com 
