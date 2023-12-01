@@ -1,0 +1,17 @@
+Global Variable Reference
+Pipeline also provides a built-in "Global Variable Reference."
+
+The variables provided by default in Pipeline are:
+
+a.env
+Exposes environment variables, for example: env.PATH or env.BUILD_ID. Consult the built-in global variable
+reference at ${YOUR_JENKINS_URL}/pipeline-syntax/globals#env for a complete, and up to date, list of environment variables available in Pipeline.
+
+b.params
+Exposes all parameters defined for the Pipeline as a read-only Map, for example: params.MY_PARAM_NAME.
+
+c.currentBuild
+May be used to discover information about the currently executing Pipeline, with properties such as currentBuild.result, currentBuild.displayName, etc. 
+Consult the built-in global variable reference at ${YOUR_JENKINS_URL}/pipeline-syntax/globals for a complete, and up to date, list of properties available on currentBuild.
+
+ checkout scm --	The checkout step will checkout code from source control; scm is a special variable which instructs the checkout step to clone the specific revision which triggered this Pipeline run
