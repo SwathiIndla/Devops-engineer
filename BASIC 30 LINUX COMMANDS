@@ -553,7 +553,7 @@ to give the group "myproject" read and write permissions on a directory and its 
 sudo groupadd -f mygroup ---> if a group already exists with this name to create a group forcefully
 
 25.getent group ---> to see all the groups/users present in system
-getent group | grep my_group  [cat /etc/group]
+getent group | grep my_group  [cat /etc/group] 
 getent passwd ---> to see the all the users [cat /etc/passwd]
 
 
