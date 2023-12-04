@@ -33,10 +33,6 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update
 sudo apt-get install jenkins
-Weekly release
-A new release is produced weekly to deliver bug fixes and features to users and plugin developers. It can be installed from the debian apt repository.
-
-Beginning with Jenkins 2.335 and Jenkins 2.332.1, the package is configured with systemd rather than the older System V init. See the DigitalOcean community systemd tutorial to better understand the benefits of systemd and the systemctl command.
 
 The package installation will:
 
@@ -44,7 +40,7 @@ Setup Jenkins as a daemon launched on start. Run systemctl cat jenkins for more 
 
 Create a ‘jenkins’ user to run this service.
 
-Direct console log output to systemd-journald. Run journalctl -u jenkins.service if you are troubleshooting Jenkins.
+Direct console log output to systemd-journald. Run "journalctl -u jenkins.service" if you are troubleshooting Jenkins.
 
 Populate /lib/systemd/system/jenkins.service with configuration parameters for the launch, e.g JENKINS_HOME
 
