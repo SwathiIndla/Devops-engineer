@@ -3,7 +3,7 @@ jnlp-java network launch protocol
 
 1.new node
 2.give the path were u want to store the artifacts in the remote windows path in remote root sirectory (ex:C:\Users\windowuser\Downloads\Jenkins)
-3.launch method:launch agent connected to ir controller
+3.launch method:launch agent connected to ir controller 
 4Custom WorkDir path:same remote root directory path
 5.save and launch node
 6.as soon as launched the node it will show couple of commands to run in the windows cmd path  (ex:C:\Users\windowuser\Downloads\Jenkins>)
