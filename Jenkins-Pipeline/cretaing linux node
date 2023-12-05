@@ -5,7 +5,7 @@ a.new node
 b.creating a ssh username and private key credential (username-see the "id" or "whoami" cmd in vm that is the username)
 c.first generate the key pairs(ssh-keygen -t rsa)
 d.go to .ssh directory 
-e.list of .ssh directory( authorized_keys,id_rsa,id_rsa.pub)
+e.list of .ssh directory( authorized_keys,id_rsa,id_rsa.pub) with known hosts file verification strategy
 f.copy the public key and add into (vi authorized_keys)
 g.copy the private key and paste it in the credential configure
 
