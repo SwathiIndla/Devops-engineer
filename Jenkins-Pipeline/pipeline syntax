@@ -1,0 +1,40 @@
+DECLARATIVE PIPELINE :
+  pipeline{
+    }
+
+1.AGENT:
+  agent any
+  agent none
+  agent { label 'my' }
+  agent { node { label 'my' } } 
+  agent { docker 'imagename'}
+  agent { 
+      docker {
+            image 'image name'
+            label 'my-defined-label'
+            args '-v /tmp:/tmp'
+            registryUrl 'https://myregistry.com/'
+            registryCredentialsId 'my-credentials'
+            }
+         }   
+  2.POST:
+     always
+     changed
+     fixed
+     regression
+     aborted
+     failure
+     sucess
+     unstable
+     unsuccessful
+     cleanup
+     
+    3.STAGES
+
+
+   DIRECTIVES:
+    1.environment:
+     environment{
+        SUCESS_NAME=credentails('id of credentials')
+          }
+          
