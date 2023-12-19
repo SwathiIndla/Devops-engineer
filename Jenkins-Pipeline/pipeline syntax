@@ -37,4 +37,44 @@ DECLARATIVE PIPELINE :
      environment{
         SUCESS_NAME=credentails('id of credentials')
           }
+
+emailext: Extended Email
+    Step for sending email via the email-ext plugin.
+    subject : String
+    body : String
+    attachLog : boolean (optional)
+    attachmentsPattern : String (optional)
+    compressLog : boolean (optional)
+    from : String (optional)
+    mimeType : String (optional)
+    postsendScript : String (optional)
+    presendScript : String (optional)
+    recipientProviders (optional)
+    Array / List of Nested Choice of Objects
+    buildUser
+    contributor
+    culprits
+    developers
+    brokenTestsSuspects
+    brokenBuildSuspects
+    recipients
+    previous
+    requestor
+    upstreamDevelopers
+    replyTo : String (optional)
+    saveOutput : boolean (optional)
+    to : String (optional)
+    emailextrecipients: Extended Email Recipients
+    recipientProviders
+    Array / List of Nested Choice of Objects
+    buildUser
+    contributor
+    culprits
+    developers
+    brokenTestsSuspects
+    brokenBuildSuspects
+    recipients
+    previous
+    requestor
+    upstreamDevelopers
           
