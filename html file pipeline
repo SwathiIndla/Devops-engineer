@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    //environment {
+       // JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64 '
+       // PATH = "$JAVA_HOME/bin:$PATH"
+   // }
+
+    stages {
+        stage('git') {
+            steps {
+                git branch: 'main', url: 'https://github.com/SwathiIndla/html-tourism.git'
+            }
+        }
+        stage('package'){
+            steps{
+                sh 'mkdir -p web'
+                sh 'cp -r index.html web/'
+                sh 'cp -r index.css web/'
+                 sh 'java -version'
+                sh 'jar -cvf tourism.war -C web .'
+            }
+        }
+         stage('Deploy to Tomcat') {
+            steps {
+                sh 'scp -i /var/lib/jenkins/.ssh/id_rsa -o StrictHostKeyChecking=no -r tourism.war vm1@74.235.128.32:/opt/tomcat/updated/webapps/'
+
+               // sh 'scp -r tourism.war vm1@74.235.128.32:/opt/tomcat/updated/webapps/' // Copy WAR file to Tomcat webapps directory
+               // sh 'ssh vm1@74.235.128.32:/opt/tomcat/bin/shutdown.sh' // Shutdown Tomcat (optional)
+               // sh 'ssh vm1@74.235.128.32:/opt/tomcat/bin/startup.sh' // Start Tomcat (optional)
+            }
+        }
+        
+    }
+}
