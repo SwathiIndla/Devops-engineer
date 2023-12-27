@@ -67,4 +67,5 @@ allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
 . . .
 
 </Context>
+13)systemctl restart tomcat
 14)browser--> ipadrress:8080
