@@ -34,14 +34,14 @@ Restart=always
 WantedBy=multi-user.target
 9)sudo systemctl daemon-reload
 10)sudo systemctl start tomcat
-11)sudo vi /opt/tomcat/latest/conf/tomcat-users.xml
+11)sudo vi /opt/tomcat/updated/conf/tomcat-users.xml
 <tomcat-users>
 <!--Comments-->
 <role rolename="admin-gui"/>
 <role rolename="manager-gui"/>
 <user username="admin" password="admin_password" roles="admin-gui,manager-gui"/>
 </tomcat-users>
-12)sudo vi /opt/tomcat/latest/webapps/manager/META-INF/context.xml
+12)sudo vi /opt/tomcat/updated/webapps/manager/META-INF/context.xml
 <ContextantiResourceLocking="false" privileged="true" >
 
 . . .
