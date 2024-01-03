@@ -39,7 +39,10 @@ WantedBy=multi-user.target
 <!--Comments-->
 <role rolename="admin-gui"/>
 <role rolename="manager-gui"/>
-<user username="admin" password="admin_password" roles="admin-gui,manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+<user username="admin" password="admin_password" roles="admin-gui,manager-script,manager-status,manager-jmx,manager-gui"/>
 </tomcat-users>
 12)sudo vi /opt/tomcat/updated/webapps/manager/META-INF/context.xml
 <ContextantiResourceLocking="false" privileged="true" >
