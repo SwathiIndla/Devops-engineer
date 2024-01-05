@@ -1,0 +1,2 @@
+# Example command for downloading Nexus Repository OSS 3.35.0-01
+wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
