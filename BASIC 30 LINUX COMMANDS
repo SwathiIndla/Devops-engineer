@@ -450,7 +450,7 @@ history -s <string>  ---> Add the specified string to the end of the history lis
 This can be useful for adding comments or notes to your history.
 
 
-3.echo  — Print a message to the terminal
+3.echo  — Print a message to the terminal 
 
 
 4.lshw – displays hardware information
