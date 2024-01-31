@@ -7,3 +7,8 @@ start-service -Name <service-name>
 stop-service -Name <service-name>
 get-executionpolicy -list --to display execution policies
 set-executionplicy executionploicy Remotesigned scope localmachine
+
+POWERSHELL MODULE
+get-command
+get-help
+get-service
