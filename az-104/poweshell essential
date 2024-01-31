@@ -1,0 +1,9 @@
+Start-process <notepad>
+Stop-process -Name <notepad>
+get-help - this command display information about powershell
+get-command-shows the all commands which is installed init
+get-service
+start-service -Name <service-name>
+stop-service -Name <service-name>
+get-executionpolicy -list --to display execution policies
+set-executionplicy executionploicy Remotesigned scope localmachine
