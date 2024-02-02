@@ -269,7 +269,7 @@ SAMPLE TEMPLATE
       "apiVersion": "2021-03-01",
       "name": "[parameters('vmName')]",
       "location": "[parameters('location')]",
-      "properties": {
+      "properties": { 
         "hardwareProfile": {
           "vmSize": "[parameters('vmSize')]"
         },
