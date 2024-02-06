@@ -12,3 +12,15 @@ POWERSHELL MODULE
 get-command
 get-help
 get-service
+
+azure roles:
+1.owner:full access to resources
+2.reader:can view resources
+3.contributor:can create and manage resources
+4.user access administor:ability to manage access role
+
+azure ad roles:
+1. global adminstrator:to manage azure ad resources
+2.billing adminstartor
+3.user adminstrator
+4.helo desk adminstrator
