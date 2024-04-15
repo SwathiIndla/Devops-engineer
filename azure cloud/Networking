@@ -1,0 +1,15 @@
+VIRTUAL NETWORK:
+VNet: Pvt Layout (Apartments)
+Firewall: Security Guard
+Subnets: Houses
+Resources: Interior (Drawing, cooking, Centrall hall(web server)...etc), Bedroom/Safe Locker is DB instance
+NSGs: Doors, 
+ports: Windows
+Ventilation (Inside holes: Inbound Traffic, Exhaust Fan is Outbound Traffic)
+Internal connecting Roads: Routes
+Load Balancer: Lift of Apartment
+Cloud watch Alarms: Calling Bells
+Monitored Grafana: security cameras
+Azure/Azure Billing: House Rent/Electric, AC charges, Maintenance, Amenities costs
+Underground electric, water, gas, DTH, Fibre pipelines connections are Other Tools Integrations with our resources/servers....
+
