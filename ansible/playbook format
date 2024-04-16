@@ -1,0 +1,12 @@
+
+- name: Playbook Name
+  hosts: target_hosts
+  become: true
+  tasks:
+   - name: Task1
+     <module_name>:
+       <module_arguments>
+   - name: Task2
+      <module_name>:
+        <module_aruguments>
+   #add more tasks     
