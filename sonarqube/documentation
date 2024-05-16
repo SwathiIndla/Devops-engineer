@@ -1,0 +1,128 @@
++[INFO] Building jar: /home/Linux-VM/my-app/target/my-app-1.0-SNAPSHOT.jar
+java -cp /home/Linux-VM/my-app/target/my-app-1.0-SNAPSHOT.jar com.example.App
+
+
+
+--------------------------------------
+sonar -
+
+sudo apt update
+
+sudo apt install openjdk-8-jdk -y
+
+sudo update-alternatives --config java
+
+sudo apt install postgresql postgresql-contrib -y
+
+
+Success. You can now start the database server using:
+
+    pg_ctlcluster 12 main start
+
+Ver Cluster Port Status Owner    Data directory              Log file
+12  main    5432 down   postgres /var/lib/postgresql/12/main /var/log/postgresql/postgresql-12-main.log
+
+
+netstat -lntp
+apt install net-tools -y
+tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN      7594/postgres
+
+
+sudo vi /etc/postgresql/12/main/postgresql.conf
+listen_addresses = '*'
+sudo systemctl restart postgresql
+sudo systemctl enable postgresql
+
+cd /etc/postgresql
+
+sudo -u postgres createuser sonarqube
+sudo -u postgres createdb sonarqube
+sudo -u postgres psql -c "ALTER USER sonarqube WITH ENCRYPTED PASSWORD 'yourpassword';"
+sudo -u postgres psql -c "ALTER USER sonarqube WITH SUPERUSER;"
+
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.2.46101.zip
+unzip sonarqube-8.9.2.46101.zip
+apt install unzip -y
+unzip sonarqube-8.9.2.46101.zip
+sudo mv sonarqube-8.9.2.46101 /opt/sonarqube
+
+cd /opt/sonarqube
+
+sudo vi /opt/sonarqube/conf/sonar.properties
+
+Update the sonar.jdbc.username and sonar.jdbc.password settings to match your PostgreSQL configuration.
+
+sonar.jdbc.username="sonarqube"
+sonar.jdbc.password="yourpassword"
+
+sudo vi /etc/systemd/system/sonarqube.service
+
+
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+User=sonarqube
+Group=sonarqube
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl start sonarqube
+sudo systemctl enable sonarqube
+
+http://your_server_ip_or_domain:9000
+
+error - couldn't start the service
+
+sudo adduser sonarqube
+sudo addgroup sonarqube
+sudo usermod -aG sonarqube sonarqube
+sudo chown -R sonarqube:sonarqube /opt/sonarqube/
+sudo systemctl restart sonarqube
+
+9000 port is not up
+
+sudo vi /opt/sonarqube/conf/sonar.properties
+
+sonar.web.host=0.0.0.0
+sonar.web.port=9000
+
+sudo systemctl restart sonarqube
+
+log check -
+
+cd /opt/sonarqube/logs
+tail -500f sonar.20230819.log
+
+WrapperSimpleApp: Encountered an error running main: java.lang.IllegalStateException: SonarQube requires Java 11 to run
+java.lang.IllegalStateException: SonarQube requires Java 11 to run
+
+
+sudo apt install openjdk-11-jdk -y
+java -version
+sudo update-alternatives --config java
+
+sudo systemctl restart sonarqube
+
+now 9000 port is open
+netstat -lntp
+
+tcp6       0      0 :::9000                 :::*                    LISTEN      26652/java
+
+http://172.174.131.31:9000/projects
+
+admin
+password
+
+
+------------------
+mvn sonar:sonar \
+  -Dsonar.projectKey=my-app \
+  -Dsonar.host.url=http://20.172.199.55:9000 \
+  -Dsonar.login=1a47e63c7eed3e4c85b3f254ea552a11265be1b9
